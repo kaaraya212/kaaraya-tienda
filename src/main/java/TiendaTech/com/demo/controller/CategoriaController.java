@@ -32,7 +32,7 @@ public class CategoriaController {
         model.addAttribute("totalCategorias", categorias.size());
         return "/categoria/listado";
     }
-
+    /*Prueba*/
     @Autowired
     private FirebaseStorageService firebaseStorageService;
 
