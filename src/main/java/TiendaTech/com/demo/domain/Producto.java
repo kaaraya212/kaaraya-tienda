@@ -1,9 +1,5 @@
 package TiendaTech.com.demo.domain;
 
-/**
- *
- * @author kathe
- */
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -22,7 +18,7 @@ public class Producto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
     private Long idProducto;
-    private Long idCategoria;
+    //private Long idCategoria; Ya no se usa por la anotación @ManyToOne
 
     @Column(nullable = false, length = 50)
     @NotBlank(message = "La descripción no puede estar vacía.")
@@ -44,4 +40,8 @@ public class Producto implements Serializable {
     @Column(name = "ruta_imagen", length = 1024)
     private String rutaImagen;
     private boolean activo;
+
+    @ManyToOne
+    @JoinColumn(name = "idCategoria")
+    private Categoria categoria;
 }
