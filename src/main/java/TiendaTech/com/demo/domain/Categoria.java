@@ -21,7 +21,7 @@ public class Categoria implements Serializable {
     private Long idCategoria;
 
     @Column(unique = true, nullable = false, length = 50)
-    private String description;
+    private String descripcion;
 
     @Column(length = 1024)
     private String rutaImagen;

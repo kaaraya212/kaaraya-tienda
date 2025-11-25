@@ -82,4 +82,8 @@ public class ProductoService {
     public List<Producto> consultaSQL(double precioInf, double precioSup) {
         return productoRepository.consultaSQL(precioInf, precioSup);
     }
+
+    public List<Producto> consultaExistencias(int inf, int sup) {
+        return productoRepository.findByExistenciasBetween(inf, sup);
+    }
 }
