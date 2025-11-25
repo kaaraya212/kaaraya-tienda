@@ -1,6 +1,8 @@
 package TiendaTech.com.demo.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 import lombok.Data;
@@ -17,12 +19,23 @@ public class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     private Integer idUsuario;
+    @NotBlank
+    @Column(unique = true, length = 30)
     private String username;
+    @Column(length = 512)
     private String password;
+    @Column(length = 20)
+    @NotBlank
     private String nombre;
+    @Column(length = 30)
+    @NotBlank
     private String apellidos;
+    @Column(unique = true, length = 75)
+    @Email
     private String correo;
+    @Column(length = 25)
     private String telefono;
+    @Column(length = 1024)
     private String rutaImagen;
     private boolean activo;
 
