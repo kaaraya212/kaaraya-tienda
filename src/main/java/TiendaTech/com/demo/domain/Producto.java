@@ -17,7 +17,7 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    private Long idProducto;
+    private Integer idProducto;
     //private Long idCategoria; Ya no se usa por la anotación @ManyToOne
 
     @Column(nullable = false, length = 50)

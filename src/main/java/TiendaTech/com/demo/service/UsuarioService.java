@@ -109,7 +109,7 @@ public class UsuarioService {
         if (imagenFile != null && !imagenFile.isEmpty()) { //Si no está vacío... pasaron una imagen...            
             try {
                 String rutaImagen = firebaseStorageService.uploadImage(
-                        imagenFile, "usuario", usuario.getIdUsuario().longValue());
+                        imagenFile, "usuario", usuario.getIdUsuario());
                 usuario.setRutaImagen(rutaImagen);
                 usuarioRepository.save(usuario);
             } catch (IOException e) {
